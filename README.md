@@ -16,4 +16,4 @@ This is Brainfuck 1, the original Brainfuck. Here are the instructions:
 The tape starts as `[0]`, and it automatically expands itself as necessary. `delay`, `max`, and `min` are function parameters used to control infinite looping to prevent crashing/freezing.
 
 ### BF2
-This is Brainfuck 2, the next layer of abstraction above the original Brainfuck. It allows
+This is Brainfuck 2, the next layer of abstraction above the original Brainfuck. It allows the entry of numbers to perform `+`, `-`, `<`, or `>` multiple times. For example, `+3` will become `+++`. `BF2.downgrade` turns BF2 code into BF1 code. `BF2.run` downgrades and then calls BF1 to interpret it.
