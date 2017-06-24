@@ -4,7 +4,7 @@ Generic BF.
 
 '''
 
-import sys, time
+import sys, time, BFcore
 
 def carefulprint(code, end = ''):
     try:
@@ -72,5 +72,9 @@ def interpret(code, delay = 0, max = 0, min = 0):
         carefulprint(codepoint)
     print('')
 
-def run(code, delay = 0, max = 0, min = 0):
-    interpret(code, delay = delay, max = max, min = min)
+def run(code, delay = 0, max = 0, min = 0, debug = False):
+    interpret((code), delay = delay, max = max, min = min)
+
+def debug(code, delay = 0, max = 0, min = 0):
+    print(__file__[__file__.rfind('/') + 1:-3], code)
+    run(code, delay = delay, max = 0, min = 0, debug = True)

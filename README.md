@@ -1,6 +1,9 @@
 # extending-brainfuck
 The purpose of this project is to try to build up many layers of abstraction, all compiling down to Brainfuck, with the ultimate intention that Brainfuck will be able to be used for more complex things.
 
+### Preprocessor
+The preprocessor modifies code before anything can run it, except BF1, because BF1 literally does not care what you throw at it as long as your square brackets are balanced. Otherwise, the code is modified by the preprocessor first.
+
 ### BF1
 This is Brainfuck 1, the original Brainfuck. Here are the instructions:
 
@@ -35,3 +38,14 @@ This is Brainfuck 3, the next layer of abstraction over BF2. Actually, BF3 doesn
 ?> Copy the content of the current cell 1 cell to the right, overwriting the right cell but not zeroing the original cell, and moving the pointer to the right 1 cell
 ?< Copy the content of the current cell 1 cell to the left, overwriting the left cell but not zeroing the original cell, and moving the pointer to the left 1 cell
 ?@ Swap the current cell with the cell 1 cell to the left, overwriting the second cell to the left, and moving the pointer to the left 1</pre></code>
+
+### BF4
+This is Brainfuck 4, the next layer of abstraction over BF3. It adds custom functions.
+
+The last line is the main program; all other lines are functions, names `a..zA..Z`. Thus, take the following code as an example:
+
+<code><pre>++++++++++
+aaa
+bb.</pre></code>
+
+`a` evaluates to `++++++++++` which makes `b = aaa = ++++++++++++++++++++++++++++++`. Then, calling `bb` will do that twice, resulting in `60`, and the `.` prints it as `'<''`.
