@@ -53,7 +53,7 @@ def downgradeBlocks(blocks):
             code += '>' * delta
         elif block in '[],.':
             code += block
-        else:
+        elif re.match('^\d+$', block):
             code += '+' * int(block)
         index += 1
     return code

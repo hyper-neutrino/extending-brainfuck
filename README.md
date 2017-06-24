@@ -42,10 +42,10 @@ This is Brainfuck 3, the next layer of abstraction over BF2. Actually, BF3 doesn
 ### BF4
 This is Brainfuck 4, the next layer of abstraction over BF3. It adds custom functions.
 
-The last line is the main program; all other lines are functions, names `a..zA..Z`. Thus, take the following code as an example:
+Each line that matches the regular expression `^\w+:.+$` is treated as a function, in the form `function_name:commands`. Thus, take the following code as an example:
 
-<code><pre>++++++++++
-aaa
+<code><pre>a:++++++++++
+b:aaa
 bb.</pre></code>
 
 `a` evaluates to `++++++++++` which makes `b = aaa = ++++++++++++++++++++++++++++++`. Then, calling `bb` will do that twice, resulting in `60`, and the `.` prints it as `'<''`.

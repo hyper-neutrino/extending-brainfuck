@@ -4,25 +4,29 @@ From BF4: adds functions
 
 '''
 
-import BF3, string, BFcore
+import BF3, BFcore, re
 
 def blockify(code):
     return code.split('\n')
 
-def replace(names, functions, code):
-    for index in range(min(len(names), len(functions))):
-        code = code.replace(names[index], functions[index])
+def replace(functions, code):
+    for name in functions:
+        code = code.replace(name, functions[name])
     return code
 
 def downgrade(code):
     blocks = blockify(code)
-    functions = blocks[:-1]
-    names = string.ascii_lowercase + string.ascii_uppercase
-    code = blocks[-1]
+    functions = {}
+    code = ''
+    for block in blocks:
+        if re.match('^\w+:.+$', block):
+            functions[block[:block.index(':')]] = block[block.index(':') + 1:]
+        else:
+            code += block + '\n'
     ref = ''
     while ref != code:
         ref = code
-        code = replace(names, functions, code)
+        code = replace(functions, code)
     return code
 
 def run(code, delay = 0, max = 0, min = 0, debug = False):
