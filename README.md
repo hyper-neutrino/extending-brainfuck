@@ -44,8 +44,8 @@ This is Brainfuck 4, the next layer of abstraction over BF3. It adds custom func
 
 Each line that matches the regular expression `^\w+:.+$` is treated as a function, in the form `function_name:commands`. Thus, take the following code as an example:
 
-<pre><code>++++++++++
-aaa
-bb.</code></pre>1980deb07ba55914ae6fba6c581e0ff9
+<pre><code>a:++++++++++
+b:aaa
+bb.</code></pre>
 
 `a` evaluates to `++++++++++` which makes `b = aaa = ++++++++++++++++++++++++++++++`. Then, calling `bb` will do that twice, resulting in `60`, and the `.` prints it as `'<'`.
