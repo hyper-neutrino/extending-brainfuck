@@ -48,4 +48,4 @@ Each line that matches the regular expression `^\w+:.+$` is treated as a functio
 b:aaa
 bb.</pre></code>
 
-`a` evaluates to `++++++++++` which makes `b = aaa = ++++++++++++++++++++++++++++++`. Then, calling `bb` will do that twice, resulting in `60`, and the `.` prints it as `'<''`.
+`a` evaluates to `++++++++++` which makes `b = aaa = ++++++++++++++++++++++++++++++`. Then, calling `bb` will do that twice, resulting in `60`, and the `.` prints it as `'<'`.
