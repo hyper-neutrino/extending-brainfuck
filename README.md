@@ -44,8 +44,8 @@ This is Brainfuck 4, the next layer of abstraction over BF3. It adds custom func
 
 The last line is the main program; all other lines are functions, names `a..zA..Z`. Thus, take the following code as an example:
 
-<code><pre>++++++++++
+<pre><code>++++++++++
 aaa
-bb.</pre></code>
+bb.</code></pre>
 
 `a` evaluates to `++++++++++` which makes `b = aaa = ++++++++++++++++++++++++++++++`. Then, calling `bb` will do that twice, resulting in `60`, and the `.` prints it as `'<''`.
