@@ -31,13 +31,15 @@ This is Brainfuck 3, the next layer of abstraction over BF2. Actually, BF3 doesn
 !> Shift the content of the current cell 1 cell to the right, overwriting the right cell and zeroing the original cell, and moving the pointer to the right 1 cell
 !< Shift the content of the current cell 1 cell to the left, overwriting the left cell and zeroing the original cell, and moving the pointer to the left 1 cell
 !@ Swap the current cell with the cell 1 cell to the right, overwriting the second cell to the right, and moving the pointer to the right 1
+!, Read all input moving to the right
 ?+ Add the current cell into the cell directly to the right of the current cell, removing the contents of the original cell, and moving the pointer to the right 1 cell
 ?- Subtract the current cell from the cell directly to the right of the current cell, removing the contents of the original cell, and moving the pointer to the right 1 cell
 ?* Multiply the current cell with the cell directly to the right of the current cell, removing the contents of the original cell and the cell two and three cells to the right of it, and moving the pointer to the right 1 cells
 ?? Zero the cell to the right, leaving the pointer in the same location
 ?> Copy the content of the current cell 1 cell to the right, overwriting the right cell but not zeroing the original cell, and moving the pointer to the right 1 cell
 ?< Copy the content of the current cell 1 cell to the left, overwriting the left cell but not zeroing the original cell, and moving the pointer to the left 1 cell
-?@ Swap the current cell with the cell 1 cell to the left, overwriting the second cell to the left, and moving the pointer to the left 1</pre></code>
+?@ Swap the current cell with the cell 1 cell to the left, overwriting the second cell to the left, and moving the pointer to the left 1
+?, Read all input moving to the left</pre></code>
 
 ### BF4
 This is Brainfuck 4, the next layer of abstraction over BF3. It adds custom functions.

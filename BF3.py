@@ -45,6 +45,8 @@ def downgradeBlocks(blocks):
                 code += '<[-]>[<+>-]<'
             elif block[1] == '@':
                 code += '>>[-]<<[>>+<<-]>[<+>-]>[<+>-]<'
+            elif block[1] == ',':
+                code += ',[>,]'
         elif block[0] == '?':
             if block[1] == '+':
                 code += '[>+<-]>'
@@ -60,6 +62,8 @@ def downgradeBlocks(blocks):
                 code += '<[-]<[-]>>[<+<+>>-]<<[>>+<<-]>'
             elif block[1] == '@':
                 code += '<<[-]>>[<<+>>-]<[>+<-]<[>+<-]>'
+            elif block[1] == ',':
+                code += ',[<,]'
         else:
             code += block
         index += 1
