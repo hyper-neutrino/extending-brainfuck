@@ -4,7 +4,7 @@ Generic BF.
 
 '''
 
-import sys, time, BFcore
+import sys, time, BFcore, re
 
 def carefulprint(code, end = ''):
     try:
@@ -13,7 +13,9 @@ def carefulprint(code, end = ''):
         pass
 
 def interpret(code, delay = 0, max = 0, min = 0):
-    tape = [0]
+    code = re.sub('[^\\[\\]<>+-.,]', '', code)
+    code = code.replace('[-]', '0').replace('[+]', '0')
+    tape = [min]
     pointer = 0
     index = 0
     output = []
@@ -59,6 +61,8 @@ def interpret(code, delay = 0, max = 0, min = 0):
                 tape[pointer] = ord(sys.stdin.read(1))
             elif char == '.':
                 output += [tape[pointer]]
+            elif char == '0':
+                tape[pointer] = 0
             index += 1
             for i in range(delay):
                 time.sleep(1)
